@@ -14,12 +14,12 @@ class UserSeeder extends Seeder
     public function run()
     {
 
-        User::factory([
-            'name' => 'Brian Miranda',
-            'email' => 'brian@campus.monlau.com',
-            'password' => bcrypt('Monlau2022')
+        User::create([
+            'name' => 'administrador',
+            'email' => 'admin@campus.monlau.com',
+            'password' => bcrypt('12345678')
         ]);    
 
-        User::factory(99)->create();
+        User::factory(9)->create();
     }
 }
