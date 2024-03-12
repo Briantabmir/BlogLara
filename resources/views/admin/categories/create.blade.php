@@ -31,7 +31,6 @@
 
         {!! Form::submit('Create category', ['class' => 'btn btn-secondary']) !!}
 
-
         {!! Form::close() !!}
     </div>
 </div>

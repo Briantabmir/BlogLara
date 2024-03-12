@@ -8,23 +8,16 @@
 
 @section('content')
 <div class="card">
+    <div class="card-body">
 
+        {!! Form::open(['route' => 'admin.tags.store']) !!}
+        
+        @include('admin.tags.partials.form')
+        
+        {!! Form::submit('Create tag', ['class' => 'btn btn-secondary']) !!}
 
-    {!! Form::open(['route' => 'admin.tags.store']) !!}
-    <div class="form-group">
-        {!! Form::label('name', 'Name') !!}
-        {!! Form::text('name', null, ['class' => 'form-control', 'placeholder' => 'Enter the tag name']) !!}
+        {!! Form::close() !!}
     </div>
-
-    <div class="form-group">
-        {!! Form::label('slug', 'Slug') !!}
-        {!! Form::text('slug', null, ['class' => 'form-control', 'placeholder' => 'Enter the slug name', 'readonly']) !!}
-    </div>
-    {!! Form::close() !!}
-
-    {!! Form::submit('Create tag', ['class' => 'btn btn-secondary']) !!}
-
-
 </div>
 @stop
 
