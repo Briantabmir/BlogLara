@@ -48,19 +48,19 @@ class PostController extends Controller
         $post = Post::create($request->all());
 
         
-        // if($request->file('file')){
-        //     $url = Storage::put('posts', $request->file('file'));
+        if($request->file('file')){
+            $url = Storage::put('posts', $request->file('file'));
             
-        //     $post->image()->create([
-        //         'url' => $url
-        //     ]);
-        // }
+            $post->image()->create([
+                'url' => $url
+            ]);
+        }
 
-        // if($request->tags){
-        //     $post->tags()->attach($request->tags);
-        // }
-        // // dd($url);
-        // return redirect()->route('admin.posts.edit', $post);
+        if($request->tags){
+            $post->tags()->attach($request->tags);
+        }
+        // dd($url);
+        return redirect()->route('admin.posts.edit', $post);
     }
 
     /**
